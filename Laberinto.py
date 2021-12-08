@@ -17,16 +17,16 @@ def buscar_mover(x1,y1,ult):
     mov=1
     while(salir==False):
         if(mov==1 and ult != 3 and x1+1<5):
-            if(laberinto[x1+1][y1]==' '):
+            if(laberinto[x1+1][y1] in (' ','s')):
                 salir=True
         elif(mov==2 and ult != 4 and y1+1<5):
-            if(laberinto[x1][y1+1]==' '==' '):
+            if(laberinto[x1][y1+1] in (' ','s')):
                 salir=True
         elif(mov==3 and ult != 1 and x1-1>-1):
-            if(laberinto[x1-1][y1]==' '):
+            if(laberinto[x1-1][y1] in (' ','s')):
                 salir=True
         elif(mov==4 and ult != 2 and y1-1>-1):
-            if(laberinto[x1][y1-1]==' '):
+            if(laberinto[x1][y1-1] in (' ','s')):
                 salir=True
         elif(mov>4):
             salir=True
@@ -44,16 +44,16 @@ def mover(x1,y1,mov):
     camino.append(mov)
     if(mov==1):
         x=x1+1
-        print("mueve ",mov, " x =",x)
+        print("mueve ",mov, " x =",x," y = ",y)
     elif(mov==2):
         y=y1+1
-        print("mueve ",mov, " x =",x)
+        print("mueve ",mov, " x =",x," y = ",y)
     elif(mov==3):
         x=x1-1
-        print("mueve ",mov, " x =",x)
+        print("mueve ",mov, " x =",x," y = ",y)
     elif(mov==4):
         y=y1-1
-        print("mueve ",mov, " x =",x)
+        print("mueve ",mov, " x =",x," y = ",y)
     else:
         print("DEL 1 al 4")
 
@@ -72,10 +72,11 @@ def main():
         if(laberinto[x][y] == 's'):
             salir = True
         
-    for i in range(0, 1):
-        print(i,"   ",camino[i])
+    for i in range(0, len(camino)):
+        print(camino[i],", ",end="")
 
-    print("FFIINN------------------")
+    print("")
+    print("Esa es la solucion al laberinto")
 
 
 if __name__ == "__main__":
