@@ -31,6 +31,7 @@ def buscar_mover(x1,y1,ult):
         elif(mov>4):
             salir=True
         mov = mov + 1
+        
     if(mov-1 in [1,2,3,4]):
         return mov-1
     else:
